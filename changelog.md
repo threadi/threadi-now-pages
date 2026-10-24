@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2] - 24.10.2026
+
+### Changed
+
+- Set compatibility with WordPress 7.2
+- Updated dependencies
+
 ## [1.0.1] - 12.10.2026
 
 The plugin has been renamed. An existing installation of version 1.0.0 will

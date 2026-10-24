@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: now page, slash pages, indieweb, personal website, activity
 Requires at least: 7.0
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 8.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -216,12 +216,7 @@ No. AI is optional and only used if you connected an AI service under Settings â
 
 = @@VersionNumber@@ =
 
-Renamed the plugin to "threadi Now Pages". An installation of 1.0.0 is not
-updated in place because the plugin folder changed. Remove the old version
-before installing this one. Entries collected with 1.0.0 are not carried over.
-
-= 1.0.0 =
-
-Initial release
+- Set compatibility with WordPress 7.2
+- Updated dependencies
 
 [older changes](https://github.com/threadi/threadi-now-pages/blob/master/changelog.md)
