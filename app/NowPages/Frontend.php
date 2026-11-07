@@ -192,7 +192,7 @@ class Frontend implements Singleton_Interface {
 		$setting->set_default( 'live' );
 		$field = new Select( $settings_obj );
 		$field->set_title( __( 'Period', 'threadi-now-pages' ) );
-		$field->set_description( __( 'Specifies the period covered by the Now page. "Live" shows the last 24 hours; the other values show the current day, hour, week or month.', 'threadi-now-pages' ) );
+		$field->set_description( __( 'Specifies the period covered by the Now page. "Live" shows the last 24 hours; "Last 4 weeks" shows the 28 days up to today; the other values show the current day, hour, week or month.', 'threadi-now-pages' ) );
 		$field->set_options( Digests::get_instance()->get_periods() );
 		$setting->set_field( $field );
 

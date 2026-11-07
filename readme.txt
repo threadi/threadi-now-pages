@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: now page, slash pages, indieweb, personal website, activity
 Requires at least: 7.0
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 8.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -216,6 +216,8 @@ No. AI is optional and only used if you connected an AI service under Settings â
 
 = @@VersionNumber@@ =
 
-Initial release
+- New period "Last 4 weeks" (`4weeks`), which shows the 28 days up to today instead of the calendar month
+- Errors of providers in the log now name the affected source with a link to it
+- Updated settings lib
 
 [older changes](https://github.com/threadi/threadi-now-pages/blob/master/changelog.md)

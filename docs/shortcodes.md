@@ -17,6 +17,7 @@ The output can be further customized using shortcode parameters. If none are spe
   - 2month
   - 6month
   - week
+  - 4weeks
 
 Example: `[threadi_now_pages_digest period="day"]`
 

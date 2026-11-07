@@ -45,6 +45,7 @@ class Periods implements Singleton_Interface {
 			Periods\Hour::class,
 			Periods\Day::class,
 			Periods\Week::class,
+			Periods\Weeks4::class,
 			Periods\Month::class,
 			Periods\Months2::class,
 			Periods\Months6::class,

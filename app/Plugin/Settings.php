@@ -245,6 +245,23 @@ class Settings {
 				'file_choose_file'                   => __( 'Choose file', 'threadi-now-pages' ),
 				'file_choose_image'                  => __( 'Upload or choose image', 'threadi-now-pages' ),
 				'drag_n_drop'                        => __( 'Hold to drag & drop', 'threadi-now-pages' ),
+				'file_remove'                        => __( 'Remove file', 'threadi-now-pages' ),
+				'settings_saved'                     => __( 'Settings saved.', 'threadi-now-pages' ),
+				'settings_saved_redirect'            => __( 'Settings saved. You will be redirected.', 'threadi-now-pages' ),
+				'settings_saved_reload'              => __( 'Settings saved. Page will reload.', 'threadi-now-pages' ),
+				'settings_save_error'                => __( 'Settings could not be saved.', 'threadi-now-pages' ),
+				'settings_save_error_details'        => __( 'Details:', 'threadi-now-pages' ),
+				'save_title'                         => __( 'Save', 'threadi-now-pages' ),
+				'dataview_config_failure'            => __( 'DataView configuration error:', 'threadi-now-pages' ),
+				'dataview_config_error'              => __( 'DataView configuration error: JSON encoding failed.', 'threadi-now-pages' ),
+				'password_stored_hint'               => __( 'A value is stored. Leave the field empty to keep it.', 'threadi-now-pages' ),
+				'password_delete_option'             => __( 'Delete stored value', 'threadi-now-pages' ),
+				'password_delete_on_save'            => __( 'The stored value will be deleted when saving.', 'threadi-now-pages' ),
+				'password_show'                      => __( 'Show value', 'threadi-now-pages' ),
+				'password_hide'                      => __( 'Hide value', 'threadi-now-pages' ),
+				'color_choose'                       => __( 'Choose color', 'threadi-now-pages' ),
+				'move_up'                            => __( 'Move up', 'threadi-now-pages' ),
+				'move_down'                          => __( 'Move down', 'threadi-now-pages' ),
 			)
 		);
 		if ( method_exists( $this->settings_obj, 'set_view' ) ) { // @phpstan-ignore function.alreadyNarrowedType
