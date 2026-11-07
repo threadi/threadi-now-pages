@@ -89,6 +89,9 @@
                     "week": {
                       "label": "Week"
                     },
+                    "4weeks": {
+                      "label": "Last 4 weeks"
+                    },
                     "month": {
                       "label": "Month"
                     },

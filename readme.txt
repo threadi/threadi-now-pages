@@ -216,7 +216,8 @@ No. AI is optional and only used if you connected an AI service under Settings â
 
 = @@VersionNumber@@ =
 
-- Set compatibility with WordPress 7.2
-- Updated dependencies
+- New period "Last 4 weeks" (`4weeks`), which shows the 28 days up to today instead of the calendar month
+- Errors of providers in the log now name the affected source with a link to it
+- Updated settings lib
 
 [older changes](https://github.com/threadi/threadi-now-pages/blob/master/changelog.md)

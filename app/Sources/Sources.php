@@ -1515,8 +1515,13 @@ class Sources extends Post_Type_Base {
 			return;
 		}
 
-		// fetch the data.
-		$entries = $source['provider']->fetch( $source['config'], $context );
+		// fetch the data, errors reported meanwhile belong to this source.
+		Providers::get_instance()->set_current_source_id( absint( $source['source_id'] ) );
+		try {
+			$entries = $source['provider']->fetch( $source['config'], $context );
+		} finally {
+			Providers::get_instance()->set_current_source_id( 0 );
+		}
 
 		// show cli hint.
 		$progress = Plugin::is_cli() ? \WP_CLI\Utils\make_progress_bar( 'Import entries from ' . $source['title'], count( $entries ) ) : false;

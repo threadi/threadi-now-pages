@@ -19,6 +19,7 @@ Die Ausgabe der Now Pages Einträge kann auch über einen Shortcode erfolgen:
   - 2month
   - 6month
   - week
+  - 4weeks
 
 Beispiel: `[threadi_now_pages_digest period="day"]`
 

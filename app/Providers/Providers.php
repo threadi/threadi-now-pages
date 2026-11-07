@@ -41,6 +41,16 @@ class Providers {
 	private array $providers = array();
 
 	/**
+	 * The ID of the source the import is currently running.
+	 *
+	 * Providers report errors without knowing the source they run for, so
+	 * the import tells us which one it is (0 = none).
+	 *
+	 * @var int
+	 */
+	private int $current_source_id = 0;
+
+	/**
 	 * Constructor, not used as this a Singleton object.
 	 */
 	private function __construct() {}
@@ -179,6 +189,26 @@ class Providers {
 	}
 
 	/**
+	 * Set the source the import is currently running.
+	 *
+	 * @param int $source_id The ID of the source, 0 if none is running.
+	 *
+	 * @return void
+	 */
+	public function set_current_source_id( int $source_id ): void {
+		$this->current_source_id = max( 0, $source_id );
+	}
+
+	/**
+	 * Return the source the import is currently running.
+	 *
+	 * @return int The ID of the source, 0 if none is running.
+	 */
+	public function get_current_source_id(): int {
+		return $this->current_source_id;
+	}
+
+	/**
 	 * Log an error a provider ran into.
 	 *
 	 * Providers deliberately do not log themselves: they signal the problem
@@ -205,9 +235,13 @@ class Providers {
 		// one click and not a search through the list.
 		$source_hint = '';
 
+		// use the source named by the error, otherwise the one the import is running.
+		$source_id = $this->get_current_source_id();
 		if ( is_array( $data ) && ! empty( $data['source_id'] ) ) {
 			$source_id = absint( $data['source_id'] );
+		}
 
+		if ( $source_id > 0 ) {
 			$source_hint = '<br>' . sprintf(
 				/* translators: %1$s will be replaced by a link to a source. */
 				__( 'You can <a href="%1$s">check whether this service can be reached</a> from your website.', 'threadi-now-pages' ),
@@ -222,13 +256,29 @@ class Providers {
 			return;
 		}
 
-		// everything else is a raw message from an API or an exception.
-		Log::get_instance()->add(
-			sprintf(
-			/* translators: %1$s will be replaced by a provider name. */
+		// name the source, so it is clear which of several sources of a provider failed.
+		$source_title = $source_id > 0 ? get_the_title( $source_id ) : '';
+
+		if ( '' !== $source_title ) {
+			$edit_url = (string) get_edit_post_link( $source_id, '' );
+			$source   = '' !== $edit_url ? '<a href="' . esc_url( $edit_url ) . '">' . esc_html( $source_title ) . '</a>' : '<code>' . esc_html( $source_title ) . '</code>';
+			$intro    = sprintf(
+				/* translators: %1$s will be replaced by a provider name, %2$s by the title of a source. */
+				__( 'The provider %1$s ran into an error at the source %2$s:', 'threadi-now-pages' ),
+				'<code>' . esc_html( $label ) . '</code>',
+				$source
+			);
+		} else {
+			$intro = sprintf(
+				/* translators: %1$s will be replaced by a provider name. */
 				__( 'The provider %1$s ran into an error:', 'threadi-now-pages' ),
 				'<code>' . esc_html( $label ) . '</code>'
-			) . ' <code>' . esc_html( $message ) . '</code>' . $source_hint,
+			);
+		}
+
+		// everything else is a raw message from an API or an exception.
+		Log::get_instance()->add(
+			$intro . ' <code>' . esc_html( $message ) . '</code>' . $source_hint,
 			'error',
 			'provider'
 		);
