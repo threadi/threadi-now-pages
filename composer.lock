@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9f8b8530942abacfca6da04ca8db033",
+    "content-hash": "14c0a992ada63d9132634572299ba599",
     "packages": [
         {
             "name": "threadi/crypt-for-wordpress",
@@ -145,16 +145,16 @@
         },
         {
             "name": "threadi/easy-setup-for-wordpress",
-            "version": "1.5.1",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/threadi/easy-setup-for-wordpress.git",
-                "reference": "bf1b95b973efef812731af08b6b8f995f97ea251"
+                "reference": "a81ec263c39c908d09d6370cfd5671210ae837e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/threadi/easy-setup-for-wordpress/zipball/bf1b95b973efef812731af08b6b8f995f97ea251",
-                "reference": "bf1b95b973efef812731af08b6b8f995f97ea251",
+                "url": "https://api.github.com/repos/threadi/easy-setup-for-wordpress/zipball/a81ec263c39c908d09d6370cfd5671210ae837e6",
+                "reference": "a81ec263c39c908d09d6370cfd5671210ae837e6",
                 "shasum": ""
             },
             "require-dev": {
@@ -186,9 +186,9 @@
             "description": "Provides a simple react-driven plugin-setup for WordPress-backend.",
             "support": {
                 "issues": "https://github.com/threadi/easy-setup-for-wordpress/issues",
-                "source": "https://github.com/threadi/easy-setup-for-wordpress/tree/1.5.1"
+                "source": "https://github.com/threadi/easy-setup-for-wordpress/tree/1.6.1"
             },
-            "time": "2026-10-04T14:36:09+00:00"
+            "time": "2026-11-14T11:54:51+00:00"
         },
         {
             "name": "threadi/easy-transients-for-wordpress",
